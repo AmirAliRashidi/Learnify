@@ -1,7 +1,7 @@
 <div class="edu-container">
   <button mat-button color="primary" (click)="refresh()">Checkout New List</button>
   <h1>Programming Language</h1>
-  <div class="main-edu" *ngIf="educationList && educationList.length && !loading">
+  <div class="main-edu" *ngIf="educationList && educationList.length && !isLoading">
     <div class="edu-card" *ngFor="let edu of educationList">
       <div class="card-head" [style.background-image]="'url(https://picsum.photos/id/' + edu.id + '/300/200)'">
         <div class="edu-like">
@@ -10,7 +10,7 @@
           </button>
         </div>
         <div class="edu-teacher">
-          <img src="https://picsum.photos/id/50/50" alt="teacher picture">
+          <img src="https://picsum.photos/id/50/50" alt="Instructor picture">
           <p>{{ edu.instructor.name }}</p>
         </div>
       </div>
@@ -40,5 +40,5 @@
       </div>
     </div>
   </div>
-  <app-loader *ngIf="loading"></app-loader>
+  <app-loader *ngIf="isLoading"></app-loader>
 </div>

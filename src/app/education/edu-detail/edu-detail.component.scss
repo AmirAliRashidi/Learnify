@@ -1,0 +1,107 @@
+.main-edu {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 10%;
+
+  .left-side {
+    width: calc(100% - 250px);
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+
+    h1 {
+      font-weight: bold;
+      margin-bottom: 50px;
+      font-size: 30px;
+    }
+
+    .main-edu-info {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+
+      .edu-info {
+        display: flex;
+        flex-direction: column;
+        margin-right: 50px;
+
+        .edu-info-title {
+          color: #757575;
+          margin: 0;
+        }
+
+        .edu-info-detail {
+          margin: 0;
+          display: flex;
+          align-items: center;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .descriptions-container {
+      padding: 20px;
+      margin-top: 20px;
+      border: 1px solid #ececec;
+      border-radius: 15px;
+    }
+  }
+
+  .right-side {
+    width: 250px;
+    border: 1px solid #ececec;
+    border-radius: 15px;
+    height: 100%;
+
+    .top-right-side {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+
+      p {
+        font-weight: 900;
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .bottom-right-side {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      border-top: 1px solid #ececec;
+
+      h3 {
+        font-weight: 500;
+        font-size: 18px;
+      }
+
+      .instructor-container {
+        display: flex;
+        flex-direction: row;
+
+        img {
+          border-radius: 100%;
+          width: 50px;
+          height: 50px;
+          margin-right: 5px;
+        }
+
+        .instructor-detail {
+          display: flex;
+          flex-direction: column;
+
+          p {
+            margin: 0;
+            color: #535353;
+          }
+
+          .email {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}

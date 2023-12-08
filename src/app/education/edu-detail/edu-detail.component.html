@@ -1,1 +1,57 @@
-<p>edu-detail works!</p>
+<app-loader *ngIf="isLoading"></app-loader>
+<button mat-icon-button color="primary" aria-label="go back" (click)="goBack()">
+  <mat-icon>arrow_back</mat-icon>
+</button>
+<div *ngIf="!isLoading && edu" class="main-edu">
+  <div class="left-side">
+    <h1>{{ edu.title }}</h1>
+    <div class="main-edu-info">
+      <div class="edu-info">
+        <h4 class="edu-info-title">Duration</h4>
+        <p class="edu-info-detail">{{ edu.duration }}</p>
+      </div>
+      <div class="edu-info">
+        <h4 class="edu-info-title">Level</h4>
+        <p class="edu-info-detail">{{ edu.level }}</p>
+      </div>
+      <div class="edu-info">
+        <h4 class="edu-info-title">Students</h4>
+        <p class="edu-info-detail">{{ edu.num_students }}</p>
+      </div>
+      <div class="edu-info">
+        <h4 class="edu-info-title">Rating</h4>
+        <p class="edu-info-detail">
+          <mat-icon style="color: gold;" class="edu-info-icon">star</mat-icon>
+          {{ edu.rating }}
+        </p>
+      </div>
+    </div>
+    <div class="descriptions-container">
+      <h2>Overview</h2>
+      <p>{{ edu.description }}</p>
+    </div>
+    <div class="descriptions-container" *ngFor="let tag of edu.tags">
+      <h2>{{tag.name}}</h2>
+      <p>{{ tag.description }}</p>
+    </div>
+  </div>
+  <div class="right-side">
+    <div class="top-right-side">
+      <p class="edu-price">$ {{ edu.price | number: '1.2-2' }}</p>
+      <button mat-flat-button color="primary" style="width: 100%;">
+        <mat-icon>edit</mat-icon>
+        Edit
+      </button>
+    </div>
+    <div class="bottom-right-side">
+      <h3>About the Instructor</h3>
+      <div class="instructor-container">
+        <img src="https://picsum.photos/id/50/50" alt="Instructor picture">
+        <div class="instructor-detail">
+          <p>{{ edu.instructor.name }}</p>
+          <p class="email">{{ edu.instructor.email }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

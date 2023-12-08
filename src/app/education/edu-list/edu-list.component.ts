@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class EduListComponent implements OnInit {
 
   educationList: education[] = [];
-  loading: boolean = true;
+  isLoading: boolean = true;
 
   constructor(
     private _educationService: EducationService,
@@ -23,18 +23,18 @@ export class EduListComponent implements OnInit {
   }
 
   getEducationList() {
-    this.loading = true;
+    this.isLoading = true;
     setTimeout(() => {
       this.educationList = this._educationService.getEdicationList();
-      this.loading = false;
+      this.isLoading = false;
     }, 1500);
   }
 
   refresh() {
-    this.loading = true;
+    this.isLoading = true;
     this._educationService.init();
     setTimeout(() => {
-      this.loading = false;
+      this.isLoading = false;
       this.educationList = this._educationService.getEdicationList();
     }, 1500);
   }

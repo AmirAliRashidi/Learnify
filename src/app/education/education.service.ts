@@ -12,11 +12,14 @@ export class EducationService {
   init() {
     this._httpClient.get("assets/json/db.json").subscribe(data => {
       this.educationList = (data as any).courses;
-      console.log(this.educationList)
     })
   }
 
   getEdicationList(): education[] {
     return this.educationList;
+  }
+
+  getEducation(id: number): education | undefined {
+    return this.educationList.find(edu => edu.id === id)
   }
 }
