@@ -73,7 +73,7 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-flat-button color="primary" cdkFocusInitial [mat-dialog-close]="true" [disabled]="!courseForm.valid && tagList && tagList.length > 0" (click)="submitForm()">
+  <button mat-flat-button color="primary" cdkFocusInitial [mat-dialog-close]="true" [disabled]="!courseForm.valid || !tagList.length" (click)="submitForm()">
     {{ data.mode === 'add' ? 'Add' : 'Edit' }}
   </button>
 </mat-dialog-actions>

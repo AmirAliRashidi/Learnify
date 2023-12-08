@@ -29,7 +29,7 @@
         flex-direction: column;
         border-bottom: 1px solid #ececec;
 
-        .tag-header{
+        .tag-header {
           display: flex;
           flex-direction: row;
           align-items: center;
@@ -37,5 +37,27 @@
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .course-container {
+    width: 500px !important;
+    flex-direction: column !important;
+
+    .course-form {
+      width: 100%;
+    }
+
+    .tag-container {
+      width: 100%;
+      margin-left: 0 !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .course-container {
+    width: 350px !important;
   }
 }

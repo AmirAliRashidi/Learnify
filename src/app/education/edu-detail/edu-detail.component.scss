@@ -105,3 +105,40 @@
     }
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  .main-edu {
+    padding: 3% !important;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .main-edu {
+    flex-direction: column-reverse !important;
+
+    .left-side {
+      width: 100% !important;
+    }
+
+    .right-side {
+      width: calc(100% - 50px) !important;
+      margin: 0 25px !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px){
+  .left-side{
+    h2{
+      margin-bottom: 5px;
+    }
+    .main-edu-info{
+      flex-direction: column !important;
+      .edu-info{
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        margin: 0 0 10px !important;
+      }
+    }
+  }
+}

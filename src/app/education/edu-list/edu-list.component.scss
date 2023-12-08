@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: flex-start;
 
-  .education-heaeder {
+  .education-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -137,5 +137,30 @@
         margin: 2.5%;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .edu-container {
+    padding: 3%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .edu-container {
+
+    .main-edu {
+
+      .edu-card {
+        width: 95%;
+        margin: 2.5%;
+      }
+    }
+  }
+
+  .education-header {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    margin-bottom: 20px;
   }
 }
