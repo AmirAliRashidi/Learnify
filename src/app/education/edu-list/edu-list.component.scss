@@ -1,0 +1,127 @@
+.edu-container {
+  width: 100%;
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .main-edu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .edu-card {
+      width: 30.3333%;
+      margin: 1.5%;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 5px 5px 21px -4px #54545461;
+      border-radius: 15px;
+
+      .card-head {
+        height: 200px;
+        width: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 15px 15px 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .edu-like {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+        }
+
+        .edu-teacher {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-left: 20px;
+          margin-bottom: 20px;
+
+          img {
+            border-radius: 100%;
+          }
+
+          p {
+            font-weight: 900;
+            margin: 0;
+            margin-left: 10px;
+            color: #fff;
+          }
+        }
+      }
+
+      .card-main {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+
+        h2 {
+          cursor: pointer;
+        }
+
+        .edu-info-container {
+          display: flex;
+          flex-direction: row;
+
+          .edu-info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-right: 25px;
+
+            .edu-info-icon {
+              color: #535353;
+              border-radius: 100%;
+              border: 1px solid #ececec;
+              padding: 7px;
+              width: auto;
+              height: auto;
+              font-size: 17px;
+            }
+
+            .edu-info-text {
+              margin-left: 6px;
+              font-size: 12px;
+              color: #535353;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      .card-bottom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid #ececec;
+        padding: 15px;
+
+        .edu-price {
+          margin: 0;
+          font-size: 17px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  .edu-container {
+
+    .main-edu {
+
+      .edu-card {
+        width: 45%;
+        margin: 2.5%;
+      }
+    }
+  }
+}
