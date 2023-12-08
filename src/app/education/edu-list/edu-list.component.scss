@@ -5,6 +5,20 @@
   flex-direction: column;
   align-items: flex-start;
 
+  .education-heaeder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+
+    .header-align {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
   .main-edu {
     width: 100%;
     display: flex;

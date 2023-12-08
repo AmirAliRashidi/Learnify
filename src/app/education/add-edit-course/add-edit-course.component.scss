@@ -1,0 +1,41 @@
+.course-container {
+  width: 800px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .course-form {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+
+  .tag-container {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+
+    form {
+      width: 100%;
+    }
+
+    .tags-container {
+      display: flex;
+      flex-direction: column;
+
+      .tag-main {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #ececec;
+
+        .tag-header{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}

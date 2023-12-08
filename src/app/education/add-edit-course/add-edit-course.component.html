@@ -1,0 +1,79 @@
+<h2 mat-dialog-title>{{ data.mode === 'add' ? 'Add Course' : 'Edit Course' }}</h2>
+<mat-dialog-content class="course-container">
+  <form [formGroup]="courseForm" class="course-form">
+    <mat-form-field>
+      <mat-label>Course Title</mat-label>
+      <input matInput formControlName="title">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Instructor Name</mat-label>
+      <input matInput formControlName="instructorName" placeholder="Ex. AmirAli Rashidi">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Instructor Email</mat-label>
+      <input matInput formControlName="instructorEmail" placeholder="Ex. amiralii.rashidii@gmail.com">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Duration</mat-label>
+      <input matInput formControlName="duration" placeholder="Ex. 10 weeks">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Level</mat-label>
+      <input matInput formControlName="level" placeholder="Ex. Intermediate">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Number of Students</mat-label>
+      <input matInput formControlName="num_students" placeholder="Ex. 300">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Price</mat-label>
+      <input matInput formControlName="price" placeholder="Ex. 90">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Rating</mat-label>
+      <input matInput formControlName="rating" placeholder="Ex. 4.6">
+    </mat-form-field>
+  </form>
+  <div class="tag-container">
+    <h3>Tags</h3>
+    <form [formGroup]="tagForm" class="course-form">
+      <mat-form-field>
+        <mat-label>Tag Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Tag Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+      <button mat-flat-button color="primary" cdkFocusInitial [disabled]="!tagForm.valid" (click)="addTagList()">
+        Add
+      </button>
+    </form>
+    <div *ngIf="tagList && tagList.length" class="tags-container">
+      <div *ngFor="let tag of tagList" class="tag-main">
+        <div class="tag-header">
+          <h2>{{ tag.name }}</h2>
+          <div>
+            <button mat-icon-button matTooltip="Warn" color="primary" (click)="editTagList(tag)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button matTooltip="Warn" color="warn" (click)="deleteTagList(tag)">
+              <mat-icon>delete_outline</mat-icon>
+            </button>
+          </div>
+        </div>
+        <p>{{ tag.description }}</p>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-flat-button color="primary" cdkFocusInitial [mat-dialog-close]="true" [disabled]="!courseForm.valid && tagList && tagList.length > 0" (click)="submitForm()">
+    {{ data.mode === 'add' ? 'Add' : 'Edit' }}
+  </button>
+</mat-dialog-actions>

@@ -1,11 +1,19 @@
 <div class="edu-container">
-  <button mat-button color="primary" (click)="refresh()">Checkout New List</button>
-  <h1>Programming Language</h1>
+  <div class="education-heaeder">
+    <div class="header-align">
+      <button mat-button color="primary" (click)="refresh()">Checkout New List</button>
+      <h1>Programming Language</h1>
+    </div>
+    <button mat-flat-button color="primary" (click)="openDialog()">
+      <mat-icon>add</mat-icon>
+      Add Course
+    </button>
+  </div>
   <div class="main-edu" *ngIf="educationList && educationList.length && !isLoading">
     <div class="edu-card" *ngFor="let edu of educationList">
       <div class="card-head" [style.background-image]="'url(https://picsum.photos/id/' + edu.id + '/300/200)'">
         <div class="edu-like">
-          <button mat-icon-button matTooltip="Warn" color="warn" aria-label="Example icon-button with a heart icon">
+          <button mat-icon-button matTooltip="Warn" color="warn">
             <mat-icon>favorite</mat-icon>
           </button>
         </div>

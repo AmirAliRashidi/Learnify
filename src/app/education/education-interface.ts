@@ -11,14 +11,10 @@ export interface education {
   num_students: number,
   price: number,
   rating: number,
-  tags: [
-    {
-      name: string,
-      description: string,
-    },
-    {
-      name: string,
-      description: string,
-    }
-  ]
+  tags: educationTag[]
+}
+
+export interface educationTag {
+  name: string,
+  description: string,
 }
