@@ -1,56 +1,56 @@
-<h2 mat-dialog-title>{{ data.mode === 'add' ? 'Add Course' : 'Edit Course' }}</h2>
+<h2 mat-dialog-title>{{ data.mode === 'add' ? dict.ADD_COURSE : dict.EDIT_COURSE }}</h2>
 <mat-dialog-content class="course-container">
   <form [formGroup]="courseForm" class="course-form">
     <mat-form-field>
-      <mat-label>Course Title</mat-label>
+      <mat-label>{{ dict.COURSE_TITLE }}</mat-label>
       <input matInput formControlName="title">
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Description</mat-label>
+      <mat-label>{{ dict.DESCRIPTION }}</mat-label>
       <textarea matInput formControlName="description"></textarea>
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Instructor Name</mat-label>
+      <mat-label>{{ dict.INSTRUCTOR_NAME }}</mat-label>
       <input matInput formControlName="instructorName" placeholder="Ex. AmirAli Rashidi">
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Instructor Email</mat-label>
+      <mat-label>{{ dict.INSTRUCTOR_EMAIL }}</mat-label>
       <input matInput formControlName="instructorEmail" placeholder="Ex. amiralii.rashidii@gmail.com">
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Duration</mat-label>
+      <mat-label>{{ dict.DURATION }}</mat-label>
       <input matInput formControlName="duration" placeholder="Ex. 10 weeks">
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Level</mat-label>
+      <mat-label>{{ dict.LEVEL }}</mat-label>
       <input matInput formControlName="level" placeholder="Ex. Intermediate">
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Number of Students</mat-label>
+      <mat-label>{{ dict.STUDENTS_NUMBER }}</mat-label>
       <input matInput formControlName="num_students" placeholder="Ex. 300">
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Price</mat-label>
+      <mat-label>{{ dict.PRICE }}</mat-label>
       <input matInput formControlName="price" placeholder="Ex. 90">
     </mat-form-field>
     <mat-form-field>
-      <mat-label>Rating</mat-label>
+      <mat-label>{{ dict.RATING }}</mat-label>
       <input matInput formControlName="rating" placeholder="Ex. 4.6">
     </mat-form-field>
   </form>
   <div class="tag-container">
-    <h3>Tags</h3>
+    <h3>{{ dict.TAGS }}</h3>
     <form [formGroup]="tagForm" class="course-form">
       <mat-form-field>
-        <mat-label>Tag Name</mat-label>
+        <mat-label>{{ dict.TAG_NAME }}</mat-label>
         <input matInput formControlName="name">
       </mat-form-field>
       <mat-form-field>
-        <mat-label>Tag Description</mat-label>
+        <mat-label>{{ dict.TAG_DESCRIPTION }}</mat-label>
         <textarea matInput formControlName="description"></textarea>
       </mat-form-field>
       <button mat-flat-button color="primary" cdkFocusInitial [disabled]="!tagForm.valid" (click)="addTagList()">
-        Add
+        {{ dict.ADD }}
       </button>
     </form>
     <div *ngIf="tagList && tagList.length" class="tags-container">
@@ -72,8 +72,8 @@
   </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button mat-dialog-close>{{ dict.CANCEL }}</button>
   <button mat-flat-button color="primary" cdkFocusInitial [mat-dialog-close]="true" [disabled]="!courseForm.valid || !tagList.length" (click)="submitForm()">
-    {{ data.mode === 'add' ? 'Add' : 'Edit' }}
+    {{ data.mode === 'add' ? dict.ADD : dict.EDIT }}
   </button>
 </mat-dialog-actions>

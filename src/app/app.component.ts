@@ -14,6 +14,6 @@ export class AppComponent implements OnInit {
   ){}
   ngOnInit(): void {
     this._educationService.init();
-    this._router.navigateByUrl('/edu/edu-list')
+    this._router.navigateByUrl('/edu/edu-list');
   }
 }

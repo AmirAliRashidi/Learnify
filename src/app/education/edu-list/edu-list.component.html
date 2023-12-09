@@ -1,12 +1,12 @@
 <div class="edu-container">
   <div class="education-header">
     <div class="header-align">
-      <button mat-button color="primary" (click)="refresh()">Checkout New List</button>
-      <h1>Programming Language</h1>
+      <button mat-button color="primary" (click)="refresh()">{{ dict.NEW_LIST }}</button>
+      <h1>{{ dict.PROGRAMMING_LANGUAGE }}</h1>
     </div>
-    <button mat-flat-button color="primary" (click)="openDialog()">
+    <button mat-flat-button color="primary" (click)="openDialog('add')">
       <mat-icon>add</mat-icon>
-      Add Course
+      {{ dict.ADD_COURSE }}
     </button>
   </div>
   <div class="main-edu" *ngIf="educationList && educationList.length && !isLoading">
@@ -41,9 +41,9 @@
       </div>
       <div class="card-bottom">
         <p class="edu-price">$ {{ edu.price | number: '1.2-2' }}</p>
-        <button mat-button color="primary">
+        <button mat-button color="primary" (click)="openDialog('edit', edu.id)">
           <mat-icon>edit</mat-icon>
-          Edit
+          {{ dict.EDIT }}
         </button>
       </div>
     </div>

@@ -20,7 +20,7 @@ import { AddEditCourseComponent } from './add-edit-course/add-edit-course.compon
   declarations: [
     EduListComponent,
     EduDetailComponent,
-    AddEditCourseComponent
+    AddEditCourseComponent,
   ],
   imports: [
     CommonModule,
@@ -37,6 +37,5 @@ import { AddEditCourseComponent } from './add-edit-course/add-edit-course.compon
     MatInputModule,
     MatSnackBarModule,
   ],
-
 })
 export class EducationModule { }

@@ -22,7 +22,7 @@ export class EducationService {
   }
 
   getEducation(id: number): education | undefined {
-    return this.educationList.find(edu => edu.id === id)
+    return this.educationList.find(edu => edu.id === id);
   }
 
   calculateNextId() {
@@ -35,5 +35,10 @@ export class EducationService {
 
   addEducation(edu: education) {
     this.educationList.push(edu);
+  }
+
+  editEducation(edu: education) {
+    let eduIndex = this.educationList.findIndex(item => item.id === edu.id);
+    this.educationList[eduIndex] = edu;
   }
 }

@@ -11,7 +11,7 @@ export interface education {
   num_students: number,
   price: number,
   rating: number,
-  tags: educationTag[]
+  tags: educationTag[],
 }
 
 export interface educationTag {
